@@ -165,7 +165,7 @@ type the following lines:
 $ cvs -d:pserver:anonymous@cvs.steghide.sourceforge.net:/cvsroot/steghide login
 CVS password:  [ Hit RETURN here ]
 
-$ cvs -z3 -d:pserver:anonymous@cvs.steghide.sourceforge.net:/cvsroot/steghide co steghide
+$ cvs -z3 -d:pserver:anonymous@cvs.steghide.sourceforge.net:/cvsroot/steghide co -P steghide
 
 You can also browse the cvs repository on the web:
 http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/steghide/
