@@ -20,19 +20,46 @@
 
 #include "common.h"
 
-#ifdef USE_LIBJPEG
+#ifdef USE_LIBPNG
 
 #include <cstdio>
 #include <iostream>
 
 #include "AUtils.h"
 #include "BinaryIO.h"
-#include "JpegFile.h"
-#include "JpegSampleValue.h"
+#include "PngFile.h"
+// #include "JpegSampleValue.h"
 #include "SMDConstructionHeuristic.h"
 #include "error.h"
 
-JpegFile::JpegFile (BinaryIO* io) : CvrStgFile() 
+PngFile::PngFile (BinaryIO* io) : CvrStgFile() 
 {
+    read( io );
+}
+
+PngFile::~PngFile () {}
+
+std::list<CvrStgFile::Property> PngFile::getProperties () const
+{
+    std::list<CvrStgFile::Property> retval;
+    // format
+
+	retval.push_back (CvrStgFile::Property (_("format"), "png")) ;
+	return retval;
+}
+
+void PngFile::read (BinaryIO* io) 
+{
+    CvrStgFile::read (io);
+	FILE *infile = NULL ;
+	if (io->is_std()) {
+		throw NotImplementedError (_("can not use standard input as source for png files with libpng.")) ;
+	}
+	else {
+		infile = io->getStream() ;uu
+		rewind (infile) ;
+    }
+
 
 }
+#endif // def USE_LIBPNG
