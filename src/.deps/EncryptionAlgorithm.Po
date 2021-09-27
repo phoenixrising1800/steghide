@@ -1,5 +1,5 @@
 EncryptionAlgorithm.o: EncryptionAlgorithm.cc common.h ../config.h \
-  gettext.h /usr/local/include/libintl.h \
+  gettext.h /usr/local/opt/gettext/include/libintl.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/locale.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h \
@@ -240,7 +240,7 @@ common.h:
 
 gettext.h:
 
-/usr/local/include/libintl.h:
+/usr/local/opt/gettext/include/libintl.h:
 
 /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/locale.h:
 

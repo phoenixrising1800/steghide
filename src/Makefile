@@ -53,7 +53,7 @@ CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
 CPP = gcc -E
-CPPFLAGS = -I/usr/local/include
+CPPFLAGS = -I/usr/local/opt/gettext/include -I/usr/local/include
 CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -O2 -Wall
@@ -82,7 +82,7 @@ INTLBISON = bison
 INTLLIBS = /usr/local/lib/libintl.dylib
 INTLOBJS = 
 INTL_LIBTOOL_SUFFIX_PREFIX = 
-LDFLAGS = 
+LDFLAGS = -L/usr/local/opt/gettext/lib
 LIBICONV = -liconv
 LIBINTL = /usr/local/lib/libintl.dylib
 LIBOBJS = 
@@ -106,7 +106,7 @@ PATH_SEPARATOR = :
 POSUB = po
 RANLIB = ranlib
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 STRIP = 
 USE_INCLUDED_LIBINTL = no
 USE_INTLDIR_FALSE = 
@@ -190,7 +190,7 @@ WavChunkHeader.cc WavChunkUnused.cc WavFile.cc WavFormatChunk.cc \
 WavPCMSampleValue.cc error.cc main.cc msg.cc SMDConstructionHeuristic.cc
 
 localedir = $(datadir)/locale
-LIBTOOL = $(SHELL) libtool
+LIBTOOL = $(SHELL) glibtool --tag CXX
 MAINTAINERCLEANFILES = Makefile.in
 subdir = src
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -53,7 +53,7 @@ CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
 CPP = gcc -E
-CPPFLAGS = -I/usr/local/include
+CPPFLAGS = -I/usr/local/opt/gettext/include -I/usr/local/include
 CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -O2 -Wall
@@ -82,7 +82,7 @@ INTLBISON = bison
 INTLLIBS = /usr/local/lib/libintl.dylib
 INTLOBJS = 
 INTL_LIBTOOL_SUFFIX_PREFIX = 
-LDFLAGS = 
+LDFLAGS = -L/usr/local/opt/gettext/lib
 LIBICONV = -liconv
 LIBINTL = /usr/local/lib/libintl.dylib
 LIBOBJS = 

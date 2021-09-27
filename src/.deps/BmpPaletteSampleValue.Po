@@ -153,7 +153,8 @@ BmpPaletteSampleValue.o: BmpPaletteSampleValue.cc BmpFile.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__node_handle \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/optional \
-  BinaryIO.h common.h ../config.h gettext.h /usr/local/include/libintl.h \
+  BinaryIO.h common.h ../config.h gettext.h \
+  /usr/local/opt/gettext/include/libintl.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/locale.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/locale.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_locale.h \
@@ -562,7 +563,7 @@ common.h:
 
 gettext.h:
 
-/usr/local/include/libintl.h:
+/usr/local/opt/gettext/include/libintl.h:
 
 /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/locale.h:
 

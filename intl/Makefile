@@ -53,9 +53,9 @@ YFLAGS = --name-prefix=__gettext
 
 DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
 -DLIBDIR=\"$(libdir)\" -DIN_LIBINTL -DHAVE_CONFIG_H
-CPPFLAGS = -I/usr/local/include
+CPPFLAGS = -I/usr/local/opt/gettext/include -I/usr/local/include
 CFLAGS = -g -O2
-LDFLAGS = 
+LDFLAGS = -L/usr/local/opt/gettext/lib
 
 COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS)
 

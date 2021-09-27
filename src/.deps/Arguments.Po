@@ -222,8 +222,9 @@ Arguments.o: Arguments.cc \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bit_reference \
-  MCryptPP.h common.h ../config.h gettext.h /usr/local/include/libintl.h \
-  Globals.h AssertionFailed.h SteghideError.h msg.h \
+  MCryptPP.h common.h ../config.h gettext.h \
+  /usr/local/opt/gettext/include/libintl.h Globals.h AssertionFailed.h \
+  SteghideError.h msg.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/cstdarg \
   Arguments.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/vector \
@@ -695,7 +696,7 @@ common.h:
 
 gettext.h:
 
-/usr/local/include/libintl.h:
+/usr/local/opt/gettext/include/libintl.h:
 
 Globals.h:
 

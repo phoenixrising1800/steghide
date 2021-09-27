@@ -30,8 +30,8 @@ Kernel configured for up to 8 processors.
 Processor type: x86_64h (Intel x86-64h Haswell)
 Processors active: 0 1 2 3 4 5 6 7
 Primary memory available: 8.00 gigabytes
-Default processor set: 401 tasks, 2569 threads, 8 processors
-Load average: 2.00, Mach factor: 5.98
+Default processor set: 392 tasks, 2546 threads, 8 processors
+Load average: 4.17, Mach factor: 4.95
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -97,7 +97,7 @@ clang: error: unsupported option '-V -Wno-framework-include-private-from-public'
 clang: error: no input files
 configure:1879: $? = 1
 configure:1903: checking for C++ compiler default output
-configure:1906: g++    conftest.cc  >&5
+configure:1906: g++  -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.cc  >&5
 configure:1909: $? = 0
 configure:1955: result: a.out
 configure:1960: checking whether the C++ compiler works
@@ -107,30 +107,30 @@ configure:1986: result: yes
 configure:1993: checking whether we are cross compiling
 configure:1995: result: no
 configure:1998: checking for suffix of executables
-configure:2000: g++ -o conftest    conftest.cc  >&5
+configure:2000: g++ -o conftest  -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.cc  >&5
 configure:2003: $? = 0
 configure:2028: result: 
 configure:2034: checking for suffix of object files
-configure:2056: g++ -c   conftest.cc >&5
+configure:2056: g++ -c  -I/usr/local/opt/gettext/include conftest.cc >&5
 configure:2059: $? = 0
 configure:2081: result: o
 configure:2085: checking whether we are using the GNU C++ compiler
-configure:2110: g++ -c   conftest.cc >&5
+configure:2110: g++ -c  -I/usr/local/opt/gettext/include conftest.cc >&5
 configure:2113: $? = 0
 configure:2116: test -s conftest.o
 configure:2119: $? = 0
 configure:2132: result: yes
 configure:2138: checking whether g++ accepts -g
-configure:2160: g++ -c -g  conftest.cc >&5
+configure:2160: g++ -c -g -I/usr/local/opt/gettext/include conftest.cc >&5
 configure:2163: $? = 0
 configure:2166: test -s conftest.o
 configure:2169: $? = 0
 configure:2180: result: yes
-configure:2224: g++ -c -g -O2  conftest.cc >&5
+configure:2224: g++ -c -g -O2 -I/usr/local/opt/gettext/include conftest.cc >&5
 configure:2227: $? = 0
 configure:2230: test -s conftest.o
 configure:2233: $? = 0
-configure:2260: g++ -c -g -O2  conftest.cc >&5
+configure:2260: g++ -c -g -O2 -I/usr/local/opt/gettext/include conftest.cc >&5
 configure:2257:1: error: use of undeclared identifier 'exit'
 exit (42);
 ^
@@ -156,11 +156,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:2224: g++ -c -g -O2  conftest.cc >&5
+configure:2224: g++ -c -g -O2 -I/usr/local/opt/gettext/include conftest.cc >&5
 configure:2227: $? = 0
 configure:2230: test -s conftest.o
 configure:2233: $? = 0
-configure:2260: g++ -c -g -O2  conftest.cc >&5
+configure:2260: g++ -c -g -O2 -I/usr/local/opt/gettext/include conftest.cc >&5
 configure:2263: $? = 0
 configure:2266: test -s conftest.o
 configure:2269: $? = 0
@@ -197,24 +197,24 @@ clang: error: unsupported option '-V -Wno-framework-include-private-from-public'
 clang: error: no input files
 configure:2907: $? = 1
 configure:2910: checking whether we are using the GNU C compiler
-configure:2935: gcc -c   conftest.c >&5
+configure:2935: gcc -c  -I/usr/local/opt/gettext/include conftest.c >&5
 configure:2938: $? = 0
 configure:2941: test -s conftest.o
 configure:2944: $? = 0
 configure:2957: result: yes
 configure:2963: checking whether gcc accepts -g
-configure:2985: gcc -c -g  conftest.c >&5
+configure:2985: gcc -c -g -I/usr/local/opt/gettext/include conftest.c >&5
 configure:2988: $? = 0
 configure:2991: test -s conftest.o
 configure:2994: $? = 0
 configure:3005: result: yes
 configure:3022: checking for gcc option to accept ANSI C
-configure:3083: gcc  -c -g -O2  conftest.c >&5
+configure:3083: gcc  -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:3086: $? = 0
 configure:3089: test -s conftest.o
 configure:3092: $? = 0
 configure:3110: result: none needed
-configure:3128: gcc -c -g -O2  conftest.c >&5
+configure:3128: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 conftest.c:2:3: error: unknown type name 'choke'
   choke me
   ^
@@ -231,7 +231,7 @@ configure: failed program was:
 configure:3242: checking dependency style of gcc
 configure:3304: result: gcc3
 configure:3326: checking for strchr
-configure:3376: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3376: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:3360:6: warning: incompatible redeclaration of library function 'strchr' [-Wincompatible-library-redeclaration]
 char strchr ();
      ^
@@ -253,7 +253,7 @@ configure:3641: checking for ranlib
 configure:3657: found /usr/bin/ranlib
 configure:3668: result: ranlib
 configure:3681: checking for strerror in -lcposix
-configure:3712: gcc -o conftest -g -O2   conftest.c -lcposix   >&5
+configure:3712: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c -lcposix   >&5
 configure:3709:6: warning: incompatible redeclaration of library function 'strerror' [-Wincompatible-library-redeclaration]
 char strerror ();
      ^
@@ -295,9 +295,9 @@ configure: failed program was:
 | }
 configure:3733: result: no
 configure:3746: checking how to run the C preprocessor
-configure:3782: gcc -E  conftest.c
+configure:3782: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:3788: $? = 0
-configure:3820: gcc -E  conftest.c
+configure:3820: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:3825:10: fatal error: 'ac_nonexistent.h' file not found
 #include <ac_nonexistent.h>
          ^~~~~~~~~~~~~~~~~~
@@ -321,9 +321,9 @@ configure: failed program was:
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:3864: result: gcc -E
-configure:3889: gcc -E  conftest.c
+configure:3889: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:3895: $? = 0
-configure:3927: gcc -E  conftest.c
+configure:3927: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:3932:10: fatal error: 'ac_nonexistent.h' file not found
 #include <ac_nonexistent.h>
          ^~~~~~~~~~~~~~~~~~
@@ -349,11 +349,11 @@ configure: failed program was:
 configure:3976: checking for egrep
 configure:3986: result: grep -E
 configure:3991: checking for ANSI C header files
-configure:4017: gcc -c -g -O2  conftest.c >&5
+configure:4017: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4020: $? = 0
 configure:4023: test -s conftest.o
 configure:4026: $? = 0
-configure:4118: gcc -o conftest -g -O2   conftest.c  >&5
+configure:4118: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:4117:7: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
       exit(2);
       ^
@@ -364,91 +364,91 @@ configure:4123: ./conftest
 configure:4126: $? = 0
 configure:4141: result: yes
 configure:4151: checking for an ANSI C-conforming const
-configure:4219: gcc -c -g -O2  conftest.c >&5
+configure:4219: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4222: $? = 0
 configure:4225: test -s conftest.o
 configure:4228: $? = 0
 configure:4239: result: yes
 configure:4249: checking for inline
-configure:4271: gcc -c -g -O2  conftest.c >&5
+configure:4271: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4274: $? = 0
 configure:4277: test -s conftest.o
 configure:4280: $? = 0
 configure:4292: result: inline
 configure:4321: checking for sys/types.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4321: checking for sys/stat.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4321: checking for stdlib.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4321: checking for string.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4321: checking for memory.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4321: checking for strings.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4321: checking for inttypes.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4321: checking for stdint.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4321: checking for unistd.h
-configure:4338: gcc -c -g -O2  conftest.c >&5
+configure:4338: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4341: $? = 0
 configure:4344: test -s conftest.o
 configure:4347: $? = 0
 configure:4358: result: yes
 configure:4370: checking for off_t
-configure:4395: gcc -c -g -O2  conftest.c >&5
+configure:4395: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4398: $? = 0
 configure:4401: test -s conftest.o
 configure:4404: $? = 0
 configure:4415: result: yes
 configure:4427: checking for size_t
-configure:4452: gcc -c -g -O2  conftest.c >&5
+configure:4452: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:4455: $? = 0
 configure:4458: test -s conftest.o
 configure:4461: $? = 0
 configure:4472: result: yes
 configure:4486: checking for working alloca.h
-configure:4508: gcc -o conftest -g -O2   conftest.c  >&5
+configure:4508: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:4511: $? = 0
 configure:4514: test -s conftest
 configure:4517: $? = 0
 configure:4528: result: yes
 configure:4538: checking for alloca
-configure:4580: gcc -o conftest -g -O2   conftest.c  >&5
+configure:4580: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:4583: $? = 0
 configure:4586: test -s conftest
 configure:4589: $? = 0
@@ -458,13 +458,13 @@ configure:4818: result: yes
 configure:4813: checking for unistd.h
 configure:4818: result: yes
 configure:4954: checking for getpagesize
-configure:5004: gcc -o conftest -g -O2   conftest.c  >&5
+configure:5004: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:5007: $? = 0
 configure:5010: test -s conftest
 configure:5013: $? = 0
 configure:5024: result: yes
 configure:5034: checking for working mmap
-configure:5177: gcc -o conftest -g -O2   conftest.c  >&5
+configure:5177: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:5180: $? = 0
 configure:5182: ./conftest
 configure:5185: $? = 0
@@ -476,7 +476,7 @@ configure:5247:10: fatal error: 'features.h' file not found
 1 error generated.
 configure:5243: result: no
 configure:5251: checking whether integer division by zero raises SIGFPE
-configure:5314: gcc -o conftest -g -O2   conftest.c  >&5
+configure:5314: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:5316:5: error: redefinition of 'nan' as different kind of symbol
 int nan;
     ^
@@ -559,31 +559,31 @@ configure: failed program was:
 | 
 configure:5337: result: no
 configure:5350: checking for inttypes.h
-configure:5373: gcc -c -g -O2  conftest.c >&5
+configure:5373: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:5376: $? = 0
 configure:5379: test -s conftest.o
 configure:5382: $? = 0
 configure:5393: result: yes
 configure:5404: checking for stdint.h
-configure:5427: gcc -c -g -O2  conftest.c >&5
+configure:5427: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:5430: $? = 0
 configure:5433: test -s conftest.o
 configure:5436: $? = 0
 configure:5447: result: yes
 configure:5458: checking for unsigned long long
-configure:5481: gcc -o conftest -g -O2   conftest.c  >&5
+configure:5481: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:5484: $? = 0
 configure:5487: test -s conftest
 configure:5490: $? = 0
 configure:5501: result: yes
 configure:5527: checking for inttypes.h
-configure:5551: gcc -c -g -O2  conftest.c >&5
+configure:5551: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:5554: $? = 0
 configure:5557: test -s conftest.o
 configure:5560: $? = 0
 configure:5572: result: yes
 configure:5585: checking whether the inttypes.h PRIxNN macros are broken
-configure:5612: gcc -c -g -O2  conftest.c >&5
+configure:5612: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:5615: $? = 0
 configure:5618: test -s conftest.o
 configure:5621: $? = 0
@@ -595,7 +595,7 @@ configure:5755: result: no
 configure:5761: checking for shared library run path origin
 configure:5774: result: done
 configure:6202: checking argz.h usability
-configure:6215: gcc -c -g -O2  conftest.c >&5
+configure:6215: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:6273:10: fatal error: 'argz.h' file not found
 #include <argz.h>
          ^~~~~~~~
@@ -675,7 +675,7 @@ configure: failed program was:
 | #include <argz.h>
 configure:6234: result: no
 configure:6238: checking argz.h presence
-configure:6249: gcc -E  conftest.c
+configure:6249: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:6275:10: fatal error: 'argz.h' file not found
 #include <argz.h>
          ^~~~~~~~
@@ -723,43 +723,43 @@ configure:6274: result: no
 configure:6310: checking for argz.h
 configure:6317: result: no
 configure:6202: checking limits.h usability
-configure:6215: gcc -c -g -O2  conftest.c >&5
+configure:6215: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:6218: $? = 0
 configure:6221: test -s conftest.o
 configure:6224: $? = 0
 configure:6234: result: yes
 configure:6238: checking limits.h presence
-configure:6249: gcc -E  conftest.c
+configure:6249: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:6255: $? = 0
 configure:6274: result: yes
 configure:6310: checking for limits.h
 configure:6317: result: yes
 configure:6202: checking locale.h usability
-configure:6215: gcc -c -g -O2  conftest.c >&5
+configure:6215: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:6218: $? = 0
 configure:6221: test -s conftest.o
 configure:6224: $? = 0
 configure:6234: result: yes
 configure:6238: checking locale.h presence
-configure:6249: gcc -E  conftest.c
+configure:6249: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:6255: $? = 0
 configure:6274: result: yes
 configure:6310: checking for locale.h
 configure:6317: result: yes
 configure:6202: checking nl_types.h usability
-configure:6215: gcc -c -g -O2  conftest.c >&5
+configure:6215: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:6218: $? = 0
 configure:6221: test -s conftest.o
 configure:6224: $? = 0
 configure:6234: result: yes
 configure:6238: checking nl_types.h presence
-configure:6249: gcc -E  conftest.c
+configure:6249: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:6255: $? = 0
 configure:6274: result: yes
 configure:6310: checking for nl_types.h
 configure:6317: result: yes
 configure:6202: checking malloc.h usability
-configure:6215: gcc -c -g -O2  conftest.c >&5
+configure:6215: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:6276:10: fatal error: 'malloc.h' file not found
 #include <malloc.h>
          ^~~~~~~~~~
@@ -842,7 +842,7 @@ configure: failed program was:
 | #include <malloc.h>
 configure:6234: result: no
 configure:6238: checking malloc.h presence
-configure:6249: gcc -E  conftest.c
+configure:6249: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:6278:10: fatal error: 'malloc.h' file not found
 #include <malloc.h>
          ^~~~~~~~~~
@@ -893,13 +893,13 @@ configure:6274: result: no
 configure:6310: checking for malloc.h
 configure:6317: result: no
 configure:6202: checking stddef.h usability
-configure:6215: gcc -c -g -O2  conftest.c >&5
+configure:6215: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:6218: $? = 0
 configure:6221: test -s conftest.o
 configure:6224: $? = 0
 configure:6234: result: yes
 configure:6238: checking stddef.h presence
-configure:6249: gcc -E  conftest.c
+configure:6249: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:6255: $? = 0
 configure:6274: result: yes
 configure:6310: checking for stddef.h
@@ -911,29 +911,29 @@ configure:6198: result: yes
 configure:6193: checking for unistd.h
 configure:6198: result: yes
 configure:6202: checking sys/param.h usability
-configure:6215: gcc -c -g -O2  conftest.c >&5
+configure:6215: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:6218: $? = 0
 configure:6221: test -s conftest.o
 configure:6224: $? = 0
 configure:6234: result: yes
 configure:6238: checking sys/param.h presence
-configure:6249: gcc -E  conftest.c
+configure:6249: gcc -E -I/usr/local/opt/gettext/include conftest.c
 configure:6255: $? = 0
 configure:6274: result: yes
 configure:6310: checking for sys/param.h
 configure:6317: result: yes
 configure:6356: checking for feof_unlocked
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for fgets_unlocked
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_fgets_unlocked", referenced from:
-      _main in conftest-9abbd1.o
-      _f in conftest-9abbd1.o
+      _main in conftest-66cc35.o
+      _f in conftest-66cc35.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6409: $? = 1
@@ -1021,47 +1021,47 @@ configure: failed program was:
 | }
 configure:6426: result: no
 configure:6356: checking for getc_unlocked
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for getcwd
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for getegid
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for geteuid
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for getgid
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for getuid
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for mempcpy
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_mempcpy", referenced from:
-      _main in conftest-ca84ff.o
-      _f in conftest-ca84ff.o
+      _main in conftest-bbe6ca.o
+      _f in conftest-bbe6ca.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6409: $? = 1
@@ -1155,31 +1155,31 @@ configure: failed program was:
 | }
 configure:6426: result: no
 configure:6356: checking for munmap
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for putenv
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for setenv
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for setlocale
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for stpcpy
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6431:6: warning: incompatible redeclaration of library function 'stpcpy' [-Wincompatible-library-redeclaration]
 char stpcpy ();
      ^
@@ -1190,7 +1190,7 @@ configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for strcasecmp
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6432:6: warning: incompatible redeclaration of library function 'strcasecmp' [-Wincompatible-library-redeclaration]
 char strcasecmp ();
      ^
@@ -1201,7 +1201,7 @@ configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for strdup
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6433:6: warning: incompatible redeclaration of library function 'strdup' [-Wincompatible-library-redeclaration]
 char strdup ();
      ^
@@ -1212,7 +1212,7 @@ configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for strtoul
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6434:6: warning: incompatible redeclaration of library function 'strtoul' [-Wincompatible-library-redeclaration]
 char strtoul ();
      ^
@@ -1223,17 +1223,17 @@ configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for tsearch
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6409: $? = 0
 configure:6412: test -s conftest
 configure:6415: $? = 0
 configure:6426: result: yes
 configure:6356: checking for __argz_count
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "___argz_count", referenced from:
-      _main in conftest-2b3012.o
-      _f in conftest-2b3012.o
+      _main in conftest-707386.o
+      _f in conftest-707386.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6409: $? = 1
@@ -1336,11 +1336,11 @@ configure: failed program was:
 | }
 configure:6426: result: no
 configure:6356: checking for __argz_stringify
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "___argz_stringify", referenced from:
-      _main in conftest-b30509.o
-      _f in conftest-b30509.o
+      _main in conftest-cb1278.o
+      _f in conftest-cb1278.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6409: $? = 1
@@ -1443,11 +1443,11 @@ configure: failed program was:
 | }
 configure:6426: result: no
 configure:6356: checking for __argz_next
-configure:6406: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6406: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "___argz_next", referenced from:
-      _main in conftest-b216d4.o
-      _f in conftest-b216d4.o
+      _main in conftest-d80a51.o
+      _f in conftest-d80a51.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6409: $? = 1
@@ -1550,14 +1550,14 @@ configure: failed program was:
 | }
 configure:6426: result: no
 configure:6467: checking for iconv
-configure:6495: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6495: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_iconv", referenced from:
-      _main in conftest-9ab7c3.o
+      _main in conftest-a672b6.o
   "_iconv_close", referenced from:
-      _main in conftest-9ab7c3.o
+      _main in conftest-a672b6.o
   "_iconv_open", referenced from:
-      _main in conftest-9ab7c3.o
+      _main in conftest-a672b6.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6498: $? = 1
@@ -1633,7 +1633,7 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:6536: gcc -o conftest -g -O2   conftest.c  -liconv >&5
+configure:6536: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  -liconv >&5
 configure:6539: $? = 0
 configure:6542: test -s conftest
 configure:6545: $? = 0
@@ -1641,20 +1641,20 @@ configure:6559: result: yes
 configure:6569: checking how to link with libiconv
 configure:6571: result: -liconv
 configure:6582: checking for iconv declaration
-configure:6617: gcc -c -g -O2  conftest.c >&5
+configure:6617: gcc -c -g -O2 -I/usr/local/opt/gettext/include conftest.c >&5
 configure:6620: $? = 0
 configure:6623: test -s conftest.o
 configure:6626: $? = 0
 configure:6641: result: 
          extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
 configure:6652: checking for nl_langinfo and CODESET
-configure:6674: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6674: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6677: $? = 0
 configure:6680: test -s conftest
 configure:6683: $? = 0
 configure:6695: result: yes
 configure:6707: checking for LC_MESSAGES
-configure:6729: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6729: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:6732: $? = 0
 configure:6735: test -s conftest
 configure:6738: $? = 0
@@ -1669,16 +1669,16 @@ configure:6843: result: yes
 configure:6858: checking whether included gettext is requested
 configure:6868: result: no
 configure:6879: checking for GNU gettext in libc
-configure:6904: gcc -o conftest -g -O2   conftest.c  >&5
+configure:6904: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "__nl_domain_bindings", referenced from:
-      _main in conftest-57af1b.o
+      _main in conftest-37a08a.o
   "__nl_msg_cat_cntr", referenced from:
-      _main in conftest-57af1b.o
+      _main in conftest-37a08a.o
   "_libintl_bindtextdomain", referenced from:
-      _main in conftest-57af1b.o
+      _main in conftest-37a08a.o
   "_libintl_gettext", referenced from:
-      _main in conftest-57af1b.o
+      _main in conftest-37a08a.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6907: $? = 1
@@ -1760,7 +1760,7 @@ configure: failed program was:
 | }
 configure:6924: result: no
 configure:7307: checking for GNU gettext in libintl
-configure:7340: gcc -o conftest -g -O2  -I/usr/local/include  conftest.c  /usr/local/lib/libintl.dylib >&5
+configure:7340: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  /usr/local/lib/libintl.dylib >&5
 configure:7343: $? = 0
 configure:7346: test -s conftest
 configure:7349: $? = 0
@@ -1774,7 +1774,7 @@ configure:7597: result: no
 configure:7602: checking for ANSI C header files
 configure:7752: result: yes
 configure:7762: checking for sys/wait.h that is POSIX.1 compatible
-configure:7794: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:7794: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:7797: $? = 0
 configure:7800: test -s conftest.o
 configure:7803: $? = 0
@@ -1782,13 +1782,13 @@ configure:7814: result: yes
 configure:7830: checking for limits.h
 configure:7835: result: yes
 configure:7839: checking termios.h usability
-configure:7852: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:7852: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:7855: $? = 0
 configure:7858: test -s conftest.o
 configure:7861: $? = 0
 configure:7871: result: yes
 configure:7875: checking termios.h presence
-configure:7886: gcc -E -I/usr/local/include conftest.c
+configure:7886: gcc -E -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c
 configure:7892: $? = 0
 configure:7911: result: yes
 configure:7947: checking for termios.h
@@ -1798,97 +1798,97 @@ configure:8056: result: yes
 configure:8066: checking for size_t
 configure:8111: result: yes
 configure:8124: checking for unsigned long int
-configure:8149: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:8149: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:8152: $? = 0
 configure:8155: test -s conftest.o
 configure:8158: $? = 0
 configure:8169: result: yes
 configure:8172: checking size of unsigned long int
-configure:8447: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:8447: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:8450: $? = 0
 configure:8452: ./conftest
 configure:8455: $? = 0
 configure:8478: result: 8
 configure:8485: checking for long int
-configure:8510: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:8510: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:8513: $? = 0
 configure:8516: test -s conftest.o
 configure:8519: $? = 0
 configure:8530: result: yes
 configure:8533: checking size of long int
-configure:8808: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:8808: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:8811: $? = 0
 configure:8813: ./conftest
 configure:8816: $? = 0
 configure:8839: result: 8
 configure:8846: checking for unsigned int
-configure:8871: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:8871: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:8874: $? = 0
 configure:8877: test -s conftest.o
 configure:8880: $? = 0
 configure:8891: result: yes
 configure:8894: checking size of unsigned int
-configure:9169: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:9169: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:9172: $? = 0
 configure:9174: ./conftest
 configure:9177: $? = 0
 configure:9200: result: 4
 configure:9207: checking for int
-configure:9232: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:9232: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:9235: $? = 0
 configure:9238: test -s conftest.o
 configure:9241: $? = 0
 configure:9252: result: yes
 configure:9255: checking size of int
-configure:9530: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:9530: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:9533: $? = 0
 configure:9535: ./conftest
 configure:9538: $? = 0
 configure:9561: result: 4
 configure:9568: checking for unsigned short int
-configure:9593: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:9593: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:9596: $? = 0
 configure:9599: test -s conftest.o
 configure:9602: $? = 0
 configure:9613: result: yes
 configure:9616: checking size of unsigned short int
-configure:9891: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:9891: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:9894: $? = 0
 configure:9896: ./conftest
 configure:9899: $? = 0
 configure:9922: result: 2
 configure:9929: checking for short int
-configure:9954: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:9954: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:9957: $? = 0
 configure:9960: test -s conftest.o
 configure:9963: $? = 0
 configure:9974: result: yes
 configure:9977: checking size of short int
-configure:10252: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:10252: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:10255: $? = 0
 configure:10257: ./conftest
 configure:10260: $? = 0
 configure:10283: result: 2
 configure:10290: checking for unsigned char
-configure:10315: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:10315: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:10318: $? = 0
 configure:10321: test -s conftest.o
 configure:10324: $? = 0
 configure:10335: result: yes
 configure:10338: checking size of unsigned char
-configure:10613: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:10613: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:10616: $? = 0
 configure:10618: ./conftest
 configure:10621: $? = 0
 configure:10644: result: 1
 configure:10651: checking for signed char
-configure:10676: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:10676: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:10679: $? = 0
 configure:10682: test -s conftest.o
 configure:10685: $? = 0
 configure:10696: result: yes
 configure:10699: checking size of signed char
-configure:10974: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:10974: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:10977: $? = 0
 configure:10979: ./conftest
 configure:10982: $? = 0
@@ -1903,7 +1903,7 @@ configure:11236: result: yes
 configure:11246: checking for /dev/random
 configure:11261: result: yes
 configure:11276: checking for vprintf
-configure:11326: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:11326: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:11383:6: warning: incompatible redeclaration of library function 'vprintf' [-Wincompatible-library-redeclaration]
 char vprintf ();
      ^
@@ -1914,11 +1914,11 @@ configure:11332: test -s conftest
 configure:11335: $? = 0
 configure:11346: result: yes
 configure:11353: checking for _doprnt
-configure:11403: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:11403: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "__doprnt", referenced from:
-      _main in conftest-d9dcc5.o
-      _f in conftest-d9dcc5.o
+      _main in conftest-1199c8.o
+      _f in conftest-1199c8.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:11406: $? = 1
@@ -2049,13 +2049,13 @@ configure: failed program was:
 | }
 configure:11423: result: no
 configure:11443: checking for tcgetattr
-configure:11493: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:11493: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:11496: $? = 0
 configure:11499: test -s conftest
 configure:11502: $? = 0
 configure:11513: result: yes
 configure:11443: checking for tcsetattr
-configure:11493: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:11493: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c  >&5
 configure:11496: $? = 0
 configure:11499: test -s conftest
 configure:11502: $? = 0
@@ -2063,31 +2063,31 @@ configure:11513: result: yes
 configure:11443: checking for strtoul
 configure:11513: result: yes
 configure:11535: checking for zlibVersion in -lz
-configure:11566: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c -lz   >&5
+configure:11566: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c -lz   >&5
 configure:11569: $? = 0
 configure:11572: test -s conftest
 configure:11575: $? = 0
 configure:11587: result: yes
 configure:11608: checking zlib.h usability
-configure:11621: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:11621: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:11624: $? = 0
 configure:11627: test -s conftest.o
 configure:11630: $? = 0
 configure:11640: result: yes
 configure:11644: checking zlib.h presence
-configure:11655: gcc -E -I/usr/local/include conftest.c
+configure:11655: gcc -E -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c
 configure:11661: $? = 0
 configure:11680: result: yes
 configure:11716: checking for zlib.h
 configure:11723: result: yes
 configure:11731: checking for mhash_init in -lmhash
-configure:11762: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c -lmhash  -lz  >&5
+configure:11762: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c -lmhash  -lz  >&5
 configure:11765: $? = 0
 configure:11768: test -s conftest
 configure:11771: $? = 0
 configure:11783: result: yes
 configure:11804: checking mhash.h usability
-configure:11817: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:11817: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 In file included from configure:11932:
 In file included from /usr/local/include/mhash.h:6:
 In file included from /usr/local/include/mutils/mincludes.h:34:
@@ -2157,7 +2157,7 @@ configure:11823: test -s conftest.o
 configure:11826: $? = 0
 configure:11836: result: yes
 configure:11840: checking mhash.h presence
-configure:11851: gcc -E -I/usr/local/include conftest.c
+configure:11851: gcc -E -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c
 In file included from configure:11934:
 In file included from /usr/local/include/mhash.h:6:
 In file included from /usr/local/include/mutils/mincludes.h:34:
@@ -2227,37 +2227,37 @@ configure:11876: result: yes
 configure:11912: checking for mhash.h
 configure:11919: result: yes
 configure:11927: checking for mcrypt_generic in -lmcrypt
-configure:11958: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c -lmcrypt  -lmhash -lz  >&5
+configure:11958: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c -lmcrypt  -lmhash -lz  >&5
 configure:11961: $? = 0
 configure:11964: test -s conftest
 configure:11967: $? = 0
 configure:11979: result: yes
 configure:12000: checking mcrypt.h usability
-configure:12013: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:12013: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:12016: $? = 0
 configure:12019: test -s conftest.o
 configure:12022: $? = 0
 configure:12032: result: yes
 configure:12036: checking mcrypt.h presence
-configure:12047: gcc -E -I/usr/local/include conftest.c
+configure:12047: gcc -E -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c
 configure:12053: $? = 0
 configure:12072: result: yes
 configure:12108: checking for mcrypt.h
 configure:12115: result: yes
 configure:12123: checking for jpeg_read_coefficients in -ljpeg
-configure:12154: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c -ljpeg  -lmcrypt -lmhash -lz  >&5
+configure:12154: gcc -o conftest -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include -L/usr/local/opt/gettext/lib conftest.c -ljpeg  -lmcrypt -lmhash -lz  >&5
 configure:12157: $? = 0
 configure:12160: test -s conftest
 configure:12163: $? = 0
 configure:12175: result: yes
 configure:12196: checking jpeglib.h usability
-configure:12209: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:12209: gcc -c -g -O2 -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c >&5
 configure:12212: $? = 0
 configure:12215: test -s conftest.o
 configure:12218: $? = 0
 configure:12228: result: yes
 configure:12232: checking jpeglib.h presence
-configure:12243: gcc -E -I/usr/local/include conftest.c
+configure:12243: gcc -E -I/usr/local/opt/gettext/include -I/usr/local/include conftest.c
 configure:12249: $? = 0
 configure:12268: result: yes
 configure:12304: checking for jpeglib.h
@@ -2290,6 +2290,7 @@ config.status:720: creating tests/data/Makefile
 config.status:720: creating m4/Makefile
 config.status:720: creating intl/Makefile
 config.status:824: creating config.h
+config.status:1113: config.h is unchanged
 config.status:1226: executing depfiles commands
 config.status:1226: executing default-1 commands
 
@@ -2307,16 +2308,16 @@ ac_cv_env_CC_set=
 ac_cv_env_CC_value=
 ac_cv_env_CFLAGS_set=
 ac_cv_env_CFLAGS_value=
-ac_cv_env_CPPFLAGS_set=
-ac_cv_env_CPPFLAGS_value=
+ac_cv_env_CPPFLAGS_set=set
+ac_cv_env_CPPFLAGS_value=-I/usr/local/opt/gettext/include
 ac_cv_env_CPP_set=
 ac_cv_env_CPP_value=
 ac_cv_env_CXXFLAGS_set=
 ac_cv_env_CXXFLAGS_value=
 ac_cv_env_CXX_set=
 ac_cv_env_CXX_value=
-ac_cv_env_LDFLAGS_set=
-ac_cv_env_LDFLAGS_value=
+ac_cv_env_LDFLAGS_set=set
+ac_cv_env_LDFLAGS_value=-L/usr/local/opt/gettext/lib
 ac_cv_env_build_alias_set=
 ac_cv_env_build_alias_value=
 ac_cv_env_host_alias_set=
@@ -2481,7 +2482,7 @@ CC='gcc'
 CCDEPMODE='depmode=gcc3'
 CFLAGS='-g -O2'
 CPP='gcc -E'
-CPPFLAGS='-I/usr/local/include'
+CPPFLAGS='-I/usr/local/opt/gettext/include -I/usr/local/include'
 CXX='g++'
 CXXDEPMODE='depmode=gcc3'
 CXXFLAGS='-O2 -Wall'
@@ -2509,7 +2510,7 @@ INTLBISON='bison'
 INTLLIBS='/usr/local/lib/libintl.dylib'
 INTLOBJS=''
 INTL_LIBTOOL_SUFFIX_PREFIX=''
-LDFLAGS=''
+LDFLAGS='-L/usr/local/opt/gettext/lib'
 LIBICONV='-liconv'
 LIBINTL='/usr/local/lib/libintl.dylib'
 LIBOBJS=''
@@ -2685,3 +2686,33 @@ target_vendor='apple'
 #include <stdlib.h>
 
 configure: exit 0
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by config.status, which was
+generated by GNU Autoconf 2.57.  Invocation command line was
+
+  CONFIG_FILES    = 
+  CONFIG_HEADERS  = 
+  CONFIG_LINKS    = 
+  CONFIG_COMMANDS = 
+  $ ./config.status 
+
+on Phoenixs-MacBook-Pro.local
+
+config.status:720: creating Makefile
+config.status:720: creating steghide.spec
+config.status:720: creating steghide.doxygen
+config.status:720: creating doc/Makefile
+config.status:720: creating po/Makefile.in
+config.status:720: creating src/Makefile
+config.status:720: creating tests/Makefile
+config.status:720: creating tests/data/Makefile
+config.status:720: creating m4/Makefile
+config.status:720: creating intl/Makefile
+config.status:824: creating config.h
+config.status:1113: config.h is unchanged
+config.status:1226: executing depfiles commands
+config.status:1226: executing default-1 commands
