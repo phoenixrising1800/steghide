@@ -1,3 +1,8 @@
+Fork Updates:
+=============
+If your system is having trouble compiling (throwing -fpermissive error) make sure
+to configure: CPPFLAGS=-fpermissive ./configure
+
 Introduction :
 ==============
 
